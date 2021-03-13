@@ -13,13 +13,16 @@
         <link rel="stylesheet" href="./assets/css/style.css">
     </head>
     <body>
-        <h1>Time Remaining: <span id="timer"></span></h1>
-        <button id="startButton">Start Quiz!</button>
-        <div id="quiz-area"></div>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-        
+        <section id="quizStart">
+            <button id="startButton">Start Quiz</button>
+        </section>
+        <section class="quizActive">
+            <h2>Time Remaining: <span id="timer"></span></h2>
+        </section>
+        <section class="quizResults"></section>
+
+
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="./assets/js/script.js" async defer></script>
     </body>
 </html>
