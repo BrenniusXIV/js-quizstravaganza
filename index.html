@@ -9,16 +9,40 @@
         <link rel="stylesheet" href="./assets/css/style.css">
     </head>
     <body>
-        <section id="quizStart">
+        <section id="quizStart" class="show">
             <button id="startButton">Start Quiz</button>
         </section>
-        <section id="quizActive">
+        <section id="quizActive" class="hide">
             <h2>Time Remaining: <span id="timer"></span></h2>
+            <form>
+                <h3 id="questionText"></h3>
+                <div id="optionList">
+                    <input type="radio" id="option1" name="option" value="">
+                    <label for="option1" id="option1Label"></label>
+                
+                
+                    <input type="radio" id="option2" name="option" value="">
+                    <label for="option2" id="option2Label"></label>
+                
+                
+                    <input type="radio" id="option3" name="option" value="">
+                    <label for="option3" id="option3Label"></label>
+                
+                
+                    <input type="radio" id="option4" name="option" value="">
+                    <label for="option4" id="option4Label"></label>
+                
+                </div>
+                <button type="button" id="prevButton"><- Previous Question</button>
+                <button type="button" id="nextButton">Next Question -></button>
+                <button id="submitButton">Submit Responses</button>
+            </form>
         </section>
-        <section id="quizResults"></section>
+        <section id="quizResults" class="hide"></section>
 
 
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-        <script src="./assets/js/script.js" async defer></script>
+        <script src="./assets/js/script.js"></script>
+        <script src="./assets/js/quiz.js"></script>
     </body>
 </html>
