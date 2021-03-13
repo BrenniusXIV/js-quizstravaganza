@@ -3,3 +3,25 @@ const quizStart = document.getElementById("quizStart");
 const quizActive = document.getElementById("quizActive");
 const quizResults = document.getElementById("quizResults");
 
+const elements = [quizStart, quizActive, quizResults];
+const showOnly = (elementToShow) => () => {
+    elements.forEach(element => {
+        if (element === elementToShow) {
+            showElement(element);
+        
+        }
+        else {
+            hideElement(element);
+        };
+    })
+};
+
+const showElement = element => {
+    element.classList.remove('hide');
+    element.classList.add('show');
+};
+
+const hideElement = element => {
+    element.classList.remove('show');
+    element.classList.add('hide');
+};
