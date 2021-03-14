@@ -1,8 +1,4 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
     <head>
         <meta charset="utf-8">
@@ -13,13 +9,42 @@
         <link rel="stylesheet" href="./assets/css/style.css">
     </head>
     <body>
-        <h1>Time Remaining: <span id="timer"></span></h1>
-        <div id="quiz-area"></div>
-        <button id="submitAnswer">Submit Response</button>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-        
-        <script src="./assets/js/script.js" async defer></script>
+        <section id="quizStart" class="show">
+            <button id="startButton">Start Quiz</button>
+        </section>
+        <section id="quizActive" class="hide">
+            <h2>Time Remaining: <span id="timer"></span></h2>
+            <form>
+                <h3 id="questionText"></h3>
+                <div id="optionList">
+                    <input type="radio" id="option1" name="option" value="">
+                    <label for="option1" id="option1Label"></label>
+                
+                
+                    <input type="radio" id="option2" name="option" value="">
+                    <label for="option2" id="option2Label"></label>
+                
+                
+                    <input type="radio" id="option3" name="option" value="">
+                    <label for="option3" id="option3Label"></label>
+                
+                
+                    <input type="radio" id="option4" name="option" value="">
+                    <label for="option4" id="option4Label"></label>
+                
+                </div>
+                <button type="button" id="prevButton"><- Previous Question</button>
+                <button type="button" id="nextButton">Next Question -></button>
+                <button type="button" id="submitButton">Submit Responses</button>
+            </form>
+        </section>
+        <section id="quizResults" class="hide">
+            <p>placeholder paragraph</p>
+        </section>
+
+
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="./assets/js/script.js"></script>
+        <script src="./assets/js/quiz.js"></script>
     </body>
 </html>

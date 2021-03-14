@@ -1,0 +1,8 @@
+/* .show is shown */
+.show   {
+    display: initial;
+}
+/* .hide is hidden */
+.hide {
+    display: none;
+}
