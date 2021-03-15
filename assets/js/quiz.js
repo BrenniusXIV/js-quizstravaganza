@@ -7,7 +7,7 @@ correctAnswer: '<script>'},
 answers: {a: '<script href="xxx.js">', b: '<script src="xxx.js">', c: '<script name="xxx.js">', d: '<javascript src="xxx.js">'},
 correctAnswer: '<script src="xxx.js">'},
 {question: 'How do you write "Hello World" in an alert box?',
-answers: {a: 'alertBox("Hello World");', b: 'msgBox("Hello World");', c: 'msg("Hellow World");', d: 'alert("Hello World");'},
+answers: {a: 'alertBox("Hello World");', b: 'msgBox("Hello World");', c: 'msg("Hello World");', d: 'alert("Hello World");'},
 correctAnswer: 'alert("Hello World");'},
 {question: 'How do you create a function in JavaScript?',
 answers: {a: 'function:myFunction()', b: 'function myFunction()', c: 'function = myFunction()', d: 'funct myFunction()'},
@@ -115,16 +115,19 @@ function handlePrevQuestion() {
 
 function evaluateResponses() {
     answersFromClient[currentQuestion] = getCurrentAnswer();
-    let evaluatedResponses = {boolValues: [], count: 0};
+    let evaluatedResponses = {boolValues: [], count: 0, timeOfQuiz: {}};
     for (var i = 0; i < answersFromClient.length; i++) {
         if (answersFromClient[i] === (testQuestions[i].correctAnswer)) {
             evaluatedResponses.boolValues[i] = true;
             evaluatedResponses.count++;
         } else evaluatedResponses.boolValues[i] = false;
     };
+    let generatedDateTime = new Date();
+    evaluatedResponses.timeOfQuiz = generatedDateTime.toLocaleString();
     console.log(evaluatedResponses);
     localStorage.setItem("correctAnswers", evaluatedResponses.boolValues);
     localStorage.setItem("count", evaluatedResponses.count);
+    localStorage.setItem("quizTime", evaluatedResponses.timeOfQuiz);
     return evaluatedResponses;
 };
 
